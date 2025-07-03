@@ -5,12 +5,35 @@ import GoogleCalendarInsert
 import ChatGPT
 
 def main():
-    st.title("Smart Google Calendar Scheduler")
+    st.markdown(
+        """
+        <style>
+        /* Ensure full-screen layout */
+        html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Background image and dimming overlay */
+        [data-testid="stApp"] {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.5), 
+                rgba(0, 0, 0, 0.5)
+            ),
+            url("https://cdn.pixabay.com/photo/2017/05/08/19/04/agenda-2296195_1280.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        </style>
+        """,
 
     # User input
     user_input = st.text_input("What do you want to schedule? (e.g., 'schedule meeting on 7/5'):")
     calendar_id = st.text_input("Enter your Google Calendar ID:")
-    # calendar_id = 'da20c0e5dbd628b5d3ad945df50a820e7bcac4f93cfdb2a3e00b9ce964661c73@group.calendar.google.com'
+
 
 
     if "chatgpt_output" not in st.session_state:
