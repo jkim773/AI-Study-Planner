@@ -21,7 +21,7 @@ For example,
 
 def main():
 
-    calendarID = 'da20c0e5dbd628b5d3ad945df50a820e7bcac4f93cfdb2a3e00b9ce964661c73@group.calendar.google.com'
+    
     avoidTheseEvents = GoogleCalendarExtract.getAllEventsNext6Months(calendarID)
 
 
