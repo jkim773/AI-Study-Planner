@@ -7,7 +7,7 @@ from googleapiclient.discovery import build
 
 def create_events_from_ChatGPT_output(inputCalendarID, chatgpt_output):
     creds = GoogleCalendarExtract.getCredFromToken()
-    # print(creds)
+ 
 
 
     service = build('calendar', 'v3', credentials=creds)
@@ -43,22 +43,3 @@ def create_events_from_ChatGPT_output(inputCalendarID, chatgpt_output):
             print(f"❌ Error creating event for line: {line}")
             print(str(e))
 
-
-# if st.session_state.chatgpt_output:
-#     st.text_area("ChatGPT Generated Schedule (CSV):", st.session_state.chatgpt_output, height=200)
-#
-#     # Only enable button if there’s at least one valid schedulable line
-#     valid_lines = [
-#         line for line in st.session_state.chatgpt_output.strip().split("\n")
-#         if len(line.strip().split(",")) == 4 and "N/A" not in line
-#     ]
-#
-#     if valid_lines:
-#         if st.button("Add to Google Calendar"):
-#             try:
-#                 GoogleCalendarInsert.create_events_from_ChatGPT_output(calendar_id, st.session_state.chatgpt_output)
-#                 st.success("Events added to Google Calendar.")
-#             except Exception as e:
-#                 st.error(f"Error adding events: {e}")
-#     else:
-#         st.warning("No valid events to add.")
